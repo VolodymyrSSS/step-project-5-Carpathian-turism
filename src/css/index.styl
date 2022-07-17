@@ -63,7 +63,7 @@ a {
     
     &__content {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto 1fr;
         padding: 0 $main_shift;
         align-items: center;
     }
@@ -148,7 +148,7 @@ a {
 
 .main-title {
     font-size: 1rem;
-    margin-bottom: 2.2em;
+    margin-bottom: 1.2em;
 
     &__summary {
         color: $main_highlite;
@@ -283,7 +283,7 @@ a {
         position: absolute;
         left: $main_shift;
         right: $main_shift;
-        top: 40vw;
+        top: 42vw;
     }
 }
 
@@ -526,6 +526,124 @@ a {
     height: 1.5em;
     background: url('/images/icons/arrow_right.svg') no-repeat center center;
     background-size: contain;
+}
+
+.burger-menu {
+    display: grid;
+
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    &__control {
+        display: none;
+    }
+}
+
+.body_burger-opened { 
+    overflow: hidden; // щоб не скролилось при відкритому бургері
+}
+
+.cover-space__burger {
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Mobile version */
+
+@media screen and (max-width: 1790px) {
+    .burger-menu {
+        position: fixed;
+        display: block;
+        background: black;
+        width: 70vw;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        transform: translate3D(70vw, 0, 0);
+        transition: transform 0.3s;
+        z-index: 999;
+
+        &__content {
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr auto;
+            height: 100vh;
+            padding: 1.3rem 0 2rem;
+        }
+
+        &__control {
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            position: absolute;
+            top: 2.1rem;
+            left: calc(-4.7rem - 2rem);
+            background: url(../images/icons/menu.svg) no-repeat center center;
+            background-size: contain;
+            border: none;
+            cursor: pointer;
+            transition: opacity 0.3s;
+
+            &:hover {
+                opasity: 0.5;
+                border: 3px solid wheat;
+                border-radius: 4px;
+            }
+
+        }
+    }
+
+    .body_burger-opened {
+        .cover-space__burger {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 998;
+        }
+
+        .burger-menu{
+            transform: translate3D(0, 0, 0);
+            
+            &__control {
+                left: -4rem;
+                background: url(../images/icons/x.svg);
+            }
+        }
+    }
+
+    .main-nav {
+        display: block;
+        margin-bottom 1rem;
+
+        &__list {
+            display: block;
+        }
+
+        &__link {
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 1rem;
+            transition: all 0.3s;
+
+            &:hover,
+            &_active:link,
+            &_active:visited {
+                opacity 1
+                background-color: #fff;
+                color: #000
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 1790px) {
