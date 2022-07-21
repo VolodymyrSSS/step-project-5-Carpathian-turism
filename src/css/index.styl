@@ -13,9 +13,11 @@ body {
 }
 
 body {
+    transform: translate3D(0, 0, 0);
     background: $main_dark url("/images/cover.jpg") no-repeat center top;
     background-size: 100% auto;
     color: $main_lite;
+    transition: transform 0.3s;
 }
 
 a {
@@ -52,10 +54,6 @@ a {
     }
 }
 
-.cover-space{
-    padding-bottom: 82%;
-}
-
 .header {
     position: absolute;
     top: 2rem;
@@ -81,6 +79,11 @@ a {
 
     &:visited {
         color: $main_lite;
+    }
+
+    &:hover,
+    &:active {
+        color: $main_highlite;
     }
 
     &__title {
@@ -131,6 +134,7 @@ a {
 
         &::placeholder {
             color: white;
+            opacity: 1;
         }
 
         &:focus {
@@ -141,6 +145,7 @@ a {
 
             &::placeholder {
                 color: $main_dark;
+                opacity: 1;
             }
         }
     }
@@ -148,7 +153,7 @@ a {
 
 .main-title {
     font-size: 1rem;
-    margin-bottom: 1.2em;
+    margin-bottom: 6.2em;
 
     &__summary {
         color: $main_highlite;
@@ -209,13 +214,14 @@ a {
     }
 }
 
+.cover-space{
+    padding-bottom: 82%;
+}
+
 .social-networks {
     position: absolute;
     left: 0;
     top: 4rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
     &__title {
         writing-mode: vertical-rl;
@@ -227,6 +233,7 @@ a {
     }
 
     &__link {
+        display: inline-block;
         opacity: 1;
         transition: opacity 0.3s;
 
@@ -293,20 +300,24 @@ a {
     align-items: center
 }
 
-.section-col {
-    &__image {
-        width: 40%;
-    }
-
-    &__content {
-        width: 44%;
-    }
-}
-
 .section-border {
     padding-bottom: 3rem;
     border-bottom: 1px solid $main_border;
     margin-bottom: 3rem;
+}
+
+.section-col {
+    &:first-child {
+        width: 40%;
+    }
+
+    &:last-child {
+        width: 44%;
+    }
+
+    &__image {
+        width: 100%;
+    }
 }
 
 .arrow-link {
@@ -401,12 +412,15 @@ a {
     &__form {
         background: none;
         border: none;
+        transition: width 0.3s;
         font: 0.83rem/1 'Open Sans', sans-serif;
-        padding: 1.1em 0.77em 1.77em;
+        padding: 1.1rem 0.77rem 1.77rem;
+        border-radius: 5px;
         color: $main_lite;
 
         &::placeholder {
             color: rgba($main_lite, 50%);
+            opacity: 1;
         }
 
         &:focus {
@@ -416,7 +430,7 @@ a {
     }
 
     &__button {
-        // position: relative;
+        position: relative;
         padding: 0;
         height: 100%;
         width: 3.55rem;
@@ -424,8 +438,12 @@ a {
         display: flex; // центруємо стрілочку
         align-items: center; // центруємо стрілочку
         justify-content: center; // центруємо стрілочку
+
+        &__icon {
+            position: absolute;
+            margin-bottom: 0 0 0 -0.2rem;
+        }
     }
-    
 }
 
 .menu {
@@ -555,6 +573,7 @@ a {
     background: rgba(0, 0, 0, 0.5);
     pointer-events: none;
     transition: opacity 0.3s;
+    z-index: -2; 
 }
 
 /* Mobile version */
@@ -604,6 +623,8 @@ a {
     }
 
     .body_burger-opened {
+        transform: translate3D(-70vw, 0, 0);
+
         .cover-space__burger {
             opacity: 1;
             pointer-events: auto;
@@ -674,11 +695,11 @@ a {
 
 @media screen and (max-width: 1380px) {
     .section-col {
-        &__image {
+        &:first-child {
             width: 43%;
         }
 
-        &__content {
+        &:last-child {
             width: 50%;
         }
     }
@@ -687,5 +708,9 @@ a {
 @media screen and (max-width: 1310px) {
     .main-title {
         font-size: 0.9rem;
+    }
+
+    .subscribe {
+        width: 35%;
     }
 }
