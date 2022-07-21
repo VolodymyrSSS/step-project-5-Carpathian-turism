@@ -11,124 +11,125 @@ html(lang="en")
         link(rel="stylesheet" href="/css/index.css")
         script(src="/js/libs/gallery.js")
     body
-        header.header
-            .header__content
-                a.logo(href='/')
-                    h1.logo_title QWERy
-                .burger-menu.burger-menu__opened
-                    .burger-menu__content
-                        nav.main-nav.header__center
-                            ul.main-nav__list
-                                li.main-nav__item
-                                    a.main-nav__link.main-nav__link_active(href="#") Information
-                                li.main-nav__item
-                                    a.main-nav__link(href="#") About&nbsp;us
-                                li.main-nav__item
-                                    a.main-nav__link(href="#") Culture
-                        label.search
-                            .search__icon
-                            input.search__form(type="text" placeholder="Search")
-                    button.burger-menu__control
-                .cover-space__burger
-        .cover-space
-        section.section.section__main
-            .main-title
-                .main-title__summary Explore the Nature Beauty
-                h1.main-title__text Discover Ukraine
-                    span.main-title__text_regular Wonderful Carpathians
-            .social-networks
-                h3.social-networks__title Follow&nbsp;us
-                ul.social-networks__list
-                    li.social-networks__item
-                        a.social-networks__link(href="#")
-                            .icon__instagram
-                    li.social-networks__item
-                        a.social-networks__link(href="#")
-                            .icon__twitter
-                    li.social-networks__item
-                        a.social-networks__link(href="#")
-                            .icon__facebook
-            .scroll-down
-                | Scroll down
-                .scroll-down__icon.icon__arrow_downward
-        .content
-            section.section.section-cols
-                img.section-col.section-col__image(src="/images/enjoy.jpg" alt="Turist in Carpathians")
-                .section-col.section-col__content
-                    .main-title.main-title_small
-                        span.main-title__summary EAST CARPATHIANS UKRAINE
-                        h2.main-title__text Have you enjoyed&nbsp;your holliday?
-                    p You will be&nbsp;amazed if&nbsp;you take part in&nbsp;any traveling Carpathian tour package. So&nbsp;it&nbsp;is also mandatory for you, besides enjoing Carpathian tourism&nbsp;, you also have to&nbsp;taste the off road vehicle tourism. The beautiful Carpathians&nbsp;hills will make you meet many travelers from other countries.
-                    a.arrow-link(href="#")
-                        | read more
-                        .arrow-link__icon.icon__arrow_rightward
-            section.section
-                #gallery.gallery
-                    each imageUrl in ['/images/G1.jpg','/images/G2.jpg','/images/G3.jpg','/images/G4.jpg','/images/G5.jpg']
-                        .gallery__slide(style={'background-image': `url("${imageUrl}")`})
-                            .gallery__content
-                                .content_small
-                                    .main-title.main-title_small.main-title_centered
-                                        span.main-title__summary Goverla
-                                        h2.main-title__text Can take a breath, we&nbsp;may go together!
-                                    p Enjoing the vast expance of&nbsp;the sea of wooded hills, witnessing the splandor of&nbsp;Mount Goverla that soars into the sky, and gazing at&nbsp;the beauty of&nbsp;the clouds passing by&nbsp;or&nbsp;otherwise enjoing the dim twilight from the mountain ridges is&nbsp;an&nbsp;unforgettable experience when visiting Goverla.
-                                    a.arrow-link.arrow-link_centered(href="#")
-                                        | read more
-                                        .arrow-link__icon.icon__arrow_rightward
-            section.section.section-cols
-                .section-col.section-col__content
-                    .main-title.main-title_small
-                        span.main-title__summary CARPATHIAN CULTURE - GUTSULS
-                        h2.main-title__text Our culture here is&nbsp;very friendly to&nbsp;people
-                    p Known for his politeness, manners and gentleness. This becomes a&nbsp;characteristic when they invite turists to taste their dishes and take part in different celebrations, fairs. OK, let's take a&nbsp;look by yourself.
-                    a.arrow-link(href="#")
-                        | read more
-                        .arrow-link__icon.icon__arrow_rightward
-                img.section-col.section-col__image(src="/images/culture.jpg" alt="Culture")
-            section.section-border
-                .start
-                    h2.start__title QWERTy
-                    .start__content
-                        h4.start__desc Ready to explore
-                        button.button Get started
-            footer.footer
-                .footer__content
-                    .subscribe
-                        h3.subscribe__title Let&nbsp;s go&nbsp;on&nbsp;vacation, Make your day
-                            .email
-                                input.email__form(type="text" placeholder="Email address")
-                                button.button.email__button(type="submit")
-                                    .button__icon.icon__right
-                    .menu
-                        h4.menu__title Servises
-                        ul.menu__list
-                            each link in ['Email Marketing', 'Campaigns', 'Branding', 'Offline']
-                                li.menu__item
-                                    a.menu__link(href="#")=link
-                    .menu
-                        h4.menu__title About
-                        ul.menu__list
-                            each link in ['Our Story', 'Benefits', 'Team', 'Careers']
-                                li.menu__item
-                                    a.menu__link(href="#")=link
-                    .menu
-                        h4.menu__title Help
-                        ul.menu__list
-                            each link in ['FAQs', 'Contact Us']
-                                li.menu__item
-                                    a.menu__link(href="#")=link
-                .footer__bottom
-                    footer__terms
-                        a.footer__link(href="#") Terms &amp;&nbsp;Conditions
-                        a.footer__link(href="#") Privacy Policy
-                    ul.social-horisontal
-                        li.social-horisontal__item
-                            a.social-horisontal__link(href="#")
-                                .icon__facebook
-                        li.social-horisontal__item
-                            a.social-horisontal__link(href="#")
-                                .icon__twitter
-                        li.social-horisontal__item
-                            a.social-horisontal__link(href="#")
+        .page
+            header.header
+                .header__content
+                    a.logo(href='/')
+                        h1.logo_title QWERy
+                    .burger-menu.burger-menu__opened
+                        .burger-menu__content
+                            nav.main-nav.header__center
+                                ul.main-nav__list
+                                    li.main-nav__item
+                                        a.main-nav__link.main-nav__link_active(href="#") Information
+                                    li.main-nav__item
+                                        a.main-nav__link(href="#") About&nbsp;us
+                                    li.main-nav__item
+                                        a.main-nav__link(href="#") Culture
+                            label.search
+                                .search__icon
+                                input.search__form(type="text" placeholder="Search")
+                        button.burger-menu__control
+                    .cover-space__burger
+            .cover-space
+            section.section.section__main
+                .main-title
+                    .main-title__summary Explore the Nature Beauty
+                    h1.main-title__text Discover Ukraine
+                        span.main-title__text_regular Wonderful Carpathians
+                .social-networks
+                    h3.social-networks__title Follow&nbsp;us
+                    ul.social-networks__list
+                        li.social-networks__item
+                            a.social-networks__link(href="#")
                                 .icon__instagram
-        script(src="/js/index.js")
+                        li.social-networks__item
+                            a.social-networks__link(href="#")
+                                .icon__twitter
+                        li.social-networks__item
+                            a.social-networks__link(href="#")
+                                .icon__facebook
+                .scroll-down
+                    | Scroll down
+                    .scroll-down__icon.icon__arrow_downward
+            .content
+                section.section.section-cols
+                    img.section-col.section-col__image(src="/images/enjoy.jpg" alt="Turist in Carpathians")
+                    .section-col.section-col__content
+                        .main-title.main-title_small
+                            span.main-title__summary EAST CARPATHIANS UKRAINE
+                            h2.main-title__text Have you enjoyed&nbsp;your holliday?
+                        p You will be&nbsp;amazed if&nbsp;you take part in&nbsp;any traveling Carpathian tour package. So&nbsp;it&nbsp;is also mandatory for you, besides enjoing Carpathian tourism&nbsp;, you also have to&nbsp;taste the off road vehicle tourism. The beautiful Carpathians&nbsp;hills will make you meet many travelers from other countries.
+                        a.arrow-link(href="#")
+                            | read more
+                            .arrow-link__icon.icon__arrow_rightward
+                section.section
+                    #gallery.gallery
+                        each imageUrl in ['/images/G1.jpg','/images/G2.jpg','/images/G3.jpg','/images/G4.jpg','/images/G5.jpg']
+                            .gallery__slide(style={'background-image': `url("${imageUrl}")`})
+                                .gallery__content
+                                    .content_small
+                                        .main-title.main-title_small.main-title_centered
+                                            span.main-title__summary Goverla
+                                            h2.main-title__text Can take a breath, we&nbsp;may go together!
+                                        p Enjoing the vast expance of&nbsp;the sea of wooded hills, witnessing the splandor of&nbsp;Mount Goverla that soars into the sky, and gazing at&nbsp;the beauty of&nbsp;the clouds passing by&nbsp;or&nbsp;otherwise enjoing the dim twilight from the mountain ridges is&nbsp;an&nbsp;unforgettable experience when visiting Goverla.
+                                        a.arrow-link.arrow-link_centered(href="#")
+                                            | read more
+                                            .arrow-link__icon.icon__arrow_rightward
+                section.section.section-cols
+                    .section-col.section-col__content
+                        .main-title.main-title_small
+                            span.main-title__summary CARPATHIAN CULTURE - GUTSULS
+                            h2.main-title__text Our culture here is&nbsp;very friendly to&nbsp;people
+                        p Known for his politeness, manners and gentleness. This becomes a&nbsp;characteristic when they invite turists to taste their dishes and take part in different celebrations, fairs. OK, let's take a&nbsp;look by yourself.
+                        a.arrow-link(href="#")
+                            | read more
+                            .arrow-link__icon.icon__arrow_rightward
+                    img.section-col.section-col__image(src="/images/culture.jpg" alt="Culture")
+                section.section-border
+                    .start
+                        h2.start__title QWERTy
+                        .start__content
+                            h4.start__desc Ready to explore
+                            button.button Get started
+                footer.footer
+                    .footer__content
+                        .subscribe
+                            h3.subscribe__title Let&nbsp;s go&nbsp;on&nbsp;vacation, Make your day
+                                .email
+                                    input.email__form(type="text" placeholder="Email address")
+                                    button.button.email__button(type="submit")
+                                        .button__icon.icon__right
+                        .menu
+                            h4.menu__title Servises
+                            ul.menu__list
+                                each link in ['Email Marketing', 'Campaigns', 'Branding', 'Offline']
+                                    li.menu__item
+                                        a.menu__link(href="#")=link
+                        .menu
+                            h4.menu__title About
+                            ul.menu__list
+                                each link in ['Our Story', 'Benefits', 'Team', 'Careers']
+                                    li.menu__item
+                                        a.menu__link(href="#")=link
+                        .menu
+                            h4.menu__title Help
+                            ul.menu__list
+                                each link in ['FAQs', 'Contact Us']
+                                    li.menu__item
+                                        a.menu__link(href="#")=link
+                    .footer__bottom
+                        footer__terms
+                            a.footer__link(href="#") Terms &amp;&nbsp;Conditions
+                            a.footer__link(href="#") Privacy Policy
+                        ul.social-horisontal
+                            li.social-horisontal__item
+                                a.social-horisontal__link(href="#")
+                                    .icon__facebook
+                            li.social-horisontal__item
+                                a.social-horisontal__link(href="#")
+                                    .icon__twitter
+                            li.social-horisontal__item
+                                a.social-horisontal__link(href="#")
+                                    .icon__instagram
+            script(src="/js/index.js")
